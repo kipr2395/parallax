@@ -13,68 +13,78 @@ html {
   font-family: $font__body;
   background-color: black;
 }
-// main{
-//   height:4000;
-// }
+img{
+  width:400px;
+}
 
 // Parallax
 .parallax{
+  // overflow:hidden;
   perspective: 1px;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-.parallax__group{
+.groupintro, .grouptitle, .parallax__group {
   position: relative;
   height: 100vh;
-  // transform-style: preserve-3d;
+
 }
+
 .parallax__layer--back {
   position: absolute;
-  left:-50px;
-  width:100%;
   height:100%;
+  width:100%;
+  background: url(../img/space.png);
+  background-repeat:no-repeat;
+  background-position: top center;
+  background-size: cover;
+  
   transform: translateZ(-4px) scale(5);
   z-index: -10;
-  img{
-    width:100vw;
-  }
+
 
 }
 .parallax__layer--earth {
   position: absolute;
-  top:450px;
   width:100%;
-  // height:1000px;
   height:100%;
+  background: url(../img/earth-500.png);
+  background-repeat:no-repeat;
+  background-position: top center;
+  background-size: contain;
+
   transform: translateZ(-1px) scale(1);
   z-index: -9;
-  img{
-    // width:1500px;
-    width:100vw;
-  }
+
 }
 .parallax__layer--moon {
   position: absolute;
-    top:1000px;
-    left:-50px;
-  width:100%;
+
+  width:100vw;
   height:100%;
-  transform: translateZ(-5px) scale(6);
+  background: url(../img/surface.png);
+  background-repeat:no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  transform: translateZ(0px) scale(1);
   z-index: -8;
 
-  img{
-    width:110vw;
-  }
+
 }
-.title{
-margin-top: 600px;
-height:initial;
-z-index: 5;
-background-color: rgba(0,0,0,1);
 
 
+
+@media screen and (min-width: 600px){
+  .parallax__layer--moon{
+    right: 25px;
+    top: 300px;
+    transform: translateZ(-5px) scale(6);
+  }
+
+}
 
 header{
   padding:3.5em 0em;
@@ -94,32 +104,29 @@ header{
   }
 
 }
-}
 
 
 
-//Content parallax
-.story{
+// .title{
+// width:100%;
+// position: relative;
+// z-index: 5;
+// background-color: black;
+
+// }
 
 
-}
 .parallax__group.content{
-  // transform-style: preserve-3d;
-  // position:relative;
-  // background-color: black;
-    img{
-      width:100vw;
-    }
-  
-  .parallax__layer{
-    position:absolute;
 
-  }
+background-color: black;
+
   .text{
     z-index: 10;
     background-color: white;
     max-width:550px;
-    margin:1em auto;
+    // margin:1em auto;
+    margin-top: 5em;
+    margin-left: 3em;
     padding:1.5em;
     p{
       padding: 1em;
@@ -129,7 +136,6 @@ header{
 }
 
 .group1{
-  // position: absolute;
   z-index: 11;
 }
 .group2{
